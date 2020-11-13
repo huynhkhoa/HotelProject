@@ -6,3 +6,5 @@ code template
 {{% %}} : hiển thị biểu thức nào đó
 {% %}: thực hiện hành động kế thừa template
 {# ghi chú #} 
+ 
+hello world!!!
