@@ -1,11 +1,12 @@
-1. pip install flask
-2. pip install flask-admin
+1. Git clone "đường dẫn"
+2. Ctrl + ALT + AS   -> Python Interpreter
+3. Bấm biểu tượng "răng cưa" -> Add... -> Ok -> Ok
+4. Bật Terminal -> pip install -r requirements.txt
+5. Run main.py 
 
 
-code template
-{{% %}} : hiển thị biểu thức nào đó
-{% %}: thực hiện hành động kế thừa template
-{# ghi chú #} 
+
+
  
 Huong dan su dung github:
 B1:
