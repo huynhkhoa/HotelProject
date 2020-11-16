@@ -1,4 +1,6 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, json, jsonify
+from hotel import app
+import json
 
 app = Flask(__name__)
 
@@ -6,6 +8,14 @@ app = Flask(__name__)
 @app.route("/")
 def main():
     return render_template("home.html")
+
+@app.route("/api/products")
+def get_product_list():
+    with open("data/products.json", encoding="utf-8") as f:
+        products = json.load(f)
+
+        return jsonify({"products": products})
+
 
 @app.route("/hello/<name>/<int:year>")
 def hello(name, year):
