@@ -1,13 +1,14 @@
-from flask import Flask, render_template, request, json, jsonify
-from hotel import app
-import json
-
-app = Flask(__name__)
+from flask import render_template, request, json, jsonify, redirect
+from hotel import app, login
+from flask_login import login_user
+from hotel.admin import *
+import hashlib
 
 
 @app.route("/")
 def main():
     return render_template("home.html")
+
 
 @app.route("/api/products")
 def get_product_list():
@@ -17,24 +18,23 @@ def get_product_list():
         return jsonify({"products": products})
 
 
-@app.route("/hello/<name>/<int:year>")
-def hello(name, year):
-    if request.args.get("location") and request.args.get("email"):
-        msg = "%s - %s" % (request.args["location"], request.args["email"])
+@app.route("/login-admin", methods=["post", "get"])
+def login_admin():
+    if request.method == "POST":
+        username = request.form.get("username")
+        password = request.form.get("password", "")
+        password = str(hashlib.md5(password.strip().encode("utf-8")).hexdigest())
+        user = User.query.filter(User.username == username.strip(), User.password == password).first()
+        if user:
+            login_user(user=user)
 
-    return "Hello %s; YEAR: %d; %s" % (name, year, msg)
+    return redirect("/admin")
 
-@app.route("/login", methods=["get", "post"])
-def login_user():
-    if request.method == 'POST':
-        username = request.form["un"]
-        password = request.form["pass"]
-        if username == "admin" and password == "123":
-            return render_template("login.html", username=username, password=password)
-        else:
-            return "failed"
 
-    return render_template("login.html")
+@login.user_loader
+def user_load(user_id):
+    return User.query.get(user_id)
+
 
 if __name__ == "__main__":
     app.run(debug=True)
