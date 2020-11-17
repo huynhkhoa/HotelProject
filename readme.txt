@@ -2,7 +2,10 @@
 2. Ctrl + ALT + AS   -> Python Interpreter
 3. Bấm biểu tượng "răng cưa" -> Add... -> Ok -> Ok
 4. Bật Terminal -> pip install -r requirements.txt
-5. Run main.py 
+5. Bật hoteldb trong SQL Workbanch 
+6. Run models.py
+7. Run main.py 
+
 
 
 
