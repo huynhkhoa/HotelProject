@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="2822c4cc-4a5e-4a4e-8d22-9b95e4bc4ae4" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/HotelProject.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Demo2.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hotel/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/hotel/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hotel/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/hotel/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hotel/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/hotel/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hotel/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/hotel/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hotel/templates/admin/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/hotel/templates/admin/index.html" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1kS614zA13trCWfw8YcPmVKilH8" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="D:/pythonProject/Flask" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RunManager" selected="Python.main">
+    <configuration name="admin" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="HotelProject" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/hotel" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/hotel/admin.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="HotelProject" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/hotel" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/hotel/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="models" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="HotelProject" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/hotel" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/hotel/models.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.main" />
+        <item itemvalue="Python.models" />
+        <item itemvalue="Python.admin" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="2822c4cc-4a5e-4a4e-8d22-9b95e4bc4ae4" name="Default Changelist" comment="" />
+      <created>1605681433644</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1605681433644</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="549" y="202" key="FileChooserDialogImpl" timestamp="1605681653637">
+      <screen x="0" y="30" width="1536" height="834" />
+    </state>
+    <state x="549" y="202" key="FileChooserDialogImpl/0.30.1536.834@0.30.1536.834" timestamp="1605681653637" />
+    <state width="1515" height="117" key="GridCell.Tab.0.bottom" timestamp="1605761428764">
+      <screen x="0" y="30" width="1536" height="834" />
+    </state>
+    <state width="1515" height="117" key="GridCell.Tab.0.bottom/0.30.1536.834@0.30.1536.834" timestamp="1605761428764" />
+    <state width="1515" height="117" key="GridCell.Tab.0.center" timestamp="1605761428764">
+      <screen x="0" y="30" width="1536" height="834" />
+    </state>
+    <state width="1515" height="117" key="GridCell.Tab.0.center/0.30.1536.834@0.30.1536.834" timestamp="1605761428764" />
+    <state width="1515" height="117" key="GridCell.Tab.0.left" timestamp="1605761428764">
+      <screen x="0" y="30" width="1536" height="834" />
+    </state>
+    <state width="1515" height="117" key="GridCell.Tab.0.left/0.30.1536.834@0.30.1536.834" timestamp="1605761428764" />
+    <state width="1515" height="117" key="GridCell.Tab.0.right" timestamp="1605761428764">
+      <screen x="0" y="30" width="1536" height="834" />
+    </state>
+    <state width="1515" height="117" key="GridCell.Tab.0.right/0.30.1536.834@0.30.1536.834" timestamp="1605761428764" />
+    <state width="1515" height="265" key="GridCell.Tab.1.bottom" timestamp="1605696470880">
+      <screen x="0" y="30" width="1536" height="834" />
+    </state>
+    <state width="1515" height="265" key="GridCell.Tab.1.bottom/0.30.1536.834@0.30.1536.834" timestamp="1605696470880" />
+    <state width="1515" height="265" key="GridCell.Tab.1.center" timestamp="1605696470880">
+      <screen x="0" y="30" width="1536" height="834" />
+    </state>
+    <state width="1515" height="265" key="GridCell.Tab.1.center/0.30.1536.834@0.30.1536.834" timestamp="1605696470880" />
+    <state width="1515" height="265" key="GridCell.Tab.1.left" timestamp="1605696470880">
+      <screen x="0" y="30" width="1536" height="834" />
+    </state>
+    <state width="1515" height="265" key="GridCell.Tab.1.left/0.30.1536.834@0.30.1536.834" timestamp="1605696470880" />
+    <state width="1515" height="265" key="GridCell.Tab.1.right" timestamp="1605696470880">
+      <screen x="0" y="30" width="1536" height="834" />
+    </state>
+    <state width="1515" height="265" key="GridCell.Tab.1.right/0.30.1536.834@0.30.1536.834" timestamp="1605696470880" />
+    <state x="277" y="92" key="SettingsEditor" timestamp="1605681535657">
+      <screen x="0" y="30" width="1536" height="834" />
+    </state>
+    <state x="277" y="92" key="SettingsEditor/0.30.1536.834@0.30.1536.834" timestamp="1605681535657" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/hotel/main.py</url>
+          <line>21</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
