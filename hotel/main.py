@@ -8,7 +8,18 @@ import hashlib
 @app.route("/")
 def main():
     return render_template("home.html")
-
+@app.route("/home.html")
+def view_first_page():
+    return render_template("home.html", title="home")
+@app.route("/about.html")
+def view_about_page():
+    return render_template("about.html", title="about")
+@app.route("/contact.html")
+def view_contact_page():
+    return render_template("contact.html", title="contact")
+@app.route("/services.html")
+def view_services_page():
+    return render_template("services.html", title="services")
 
 @app.route("/api/products")
 def get_product_list():
