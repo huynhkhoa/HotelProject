@@ -5,23 +5,15 @@ Author URL: http://w3layouts.com
 <!doctype html>
 <html lang="en">
   <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <title>Hotels a Hotels Category Responsive Web Template | Services : W3layouts</title>
-
-    <link href="//fonts.googleapis.com/css?family=Spartan:400,500,600,700,900&display=swap" rel="stylesheet">
-
-    <!-- Template CSS -->
-    <link rel="stylesheet" href="static/css/style-starter.css">
+{%block scripts %}
+{%include 'base/Scripts.html'%}
+{% endblock %}
   </head>
   <body>
 <!--navbar-->
 {%block header %}
 {%include 'base/header.html'%}
 {% endblock %}
-
 
 <!-- //w3l-header -->
 <section class="w3l-breadcrumb">

@@ -5,16 +5,9 @@ Author URL: http://w3layouts.com
 <!doctype html>
 <html lang="en">
   <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <title>Hotels a Hotels Category Responsive Web Template | About : W3layouts</title>
-
-    <link href="//fonts.googleapis.com/css?family=Spartan:400,500,600,700,900&display=swap" rel="stylesheet">
-
-    <!-- Template CSS -->
-    <link rel="stylesheet" href="static/css/style-starter.css">
+{%block scripts %}
+{%include 'base/Scripts.html'%}
+{% endblock %}
   </head>
   <body>
 <!--navbar-->
@@ -167,8 +160,8 @@ Author URL: http://w3layouts.com
 					<img src="static/images/An.jpg" class="img-fluid" alt="">
 					<div class="team-info">
 						<div class="caption">
-							<h4>Hoàng An</h4>
-							<h6>Founder and CEO</h6>
+							<h4>Winston Lê</h4>
+							<h6>Founder</h6>
 						</div>
 					</div>
 				</div>
@@ -180,14 +173,14 @@ Author URL: http://w3layouts.com
 						<i class="fa fa-twitter"></i>
 					</a>
 				</div>
-			</div>
+			</div> <!-- An -->
 			<div class="col-sm-4">
 				<div class="team-grids text-center">
-					<img src="static/images/team2.jpg" class="img-fluid" alt="">
+					<img src="static/images/khoa.jpg" class="img-fluid" alt="">
 					<div class="team-info">
 						<div class="caption">
-							<h4>Alexander</h4>
-							<h6>Partner & co-founder</h6>
+							<h4>Khoa Huynh</h4>
+							<h6>CEO</h6>
 						</div>
 					</div>
 				</div>
@@ -199,14 +192,14 @@ Author URL: http://w3layouts.com
 						<i class="fa fa-twitter"></i>
 					</a>
 				</div>
-			</div>
+			</div> <!-- Khoa -->
 			<div class="col-sm-4">
 				<div class="team-grids text-center">
-					<img src="static/images/team3.jpg" class="img-fluid" alt="">
+					<img src="static/images/tao.jpg" class="img-fluid" alt="">
 					<div class="team-info">
 						<div class="caption">
-							<h4>Martin ker </h4>
-							<h6>Chairmen</h6>
+							<h4> Tai Nguyen </h4>
+							<h6>Co-founder</h6>
 						</div>
 					</div>
 				</div>
@@ -218,7 +211,7 @@ Author URL: http://w3layouts.com
 						<i class="fa fa-twitter"></i>
 					</a>
 				</div>
-			</div>
+			</div> <!-- Tai -->
 		</div>
 	</div>
 </section>
@@ -344,9 +337,6 @@ Author URL: http://w3layouts.com
 {%include 'base/footer.html'%}
 {% endblock %}
 
-<!-- Template JavaScript -->
-<script src="https://code.jquery.com/jquery-migrate-3.3.1.min.js" integrity="sha256-APllMc0V4lf/Rb5Cz4idWUCYlBDG3b0EcN1Ushd3hpE=" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.js" integrity="sha512-gY25nC63ddE0LcLPhxUJGFxa2GoIyA5FLym4UJqHDEMHjp8RET6Zn/SHo1sltt3WuVtqfyxECP38/daUc/WVEA==" crossorigin="anonymous"></script>
 <!-- script for banner slider-->
 <script>
   $(document).ready(function () {
@@ -416,7 +406,7 @@ Author URL: http://w3layouts.com
   })
 </script>
 <!-- //script for owlcarousel -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js" integrity="sha512-IsNh5E3eYy3tr/JiX2Yx4vsCujtkhwl7SLqgnwLNgf04Hrt9BT9SXlLlZlWx+OK4ndzAoALhsMNcCmkggjZB1w==" crossorigin="anonymous"></script><script>
+<script>
   $(document).ready(function () {
     $('.popup-with-zoom-anim').magnificPopup({
       type: 'inline',
@@ -462,8 +452,6 @@ $(function () {
 });
 </script>
 <!-- disable body scroll which navbar is in active -->
-
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
 </body>
 

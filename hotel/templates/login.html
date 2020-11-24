@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <title>Dang Nhap</title>
 </head>
+{%block header %}
+{%include 'base/header.html'%}
+{% endblock %}
 <body>
     {% if username and password %}
     <h1>{{ username }} - {{ password }}</h1>

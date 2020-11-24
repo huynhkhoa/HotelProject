@@ -20,6 +20,9 @@ def view_contact_page():
 @app.route("/services.html")
 def view_services_page():
     return render_template("services.html", title="services")
+@app.route("/book.html")
+def view_product_page():
+    return render_template("book.html", title="product")
 
 @app.route("/api/products")
 def get_product_list():
