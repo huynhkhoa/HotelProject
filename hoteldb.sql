@@ -118,7 +118,7 @@ CREATE TABLE `roomdetail` (
   PRIMARY KEY (`id`),
   KEY `type_id` (`type_id`),
   CONSTRAINT `roomdetail_ibfk_1` FOREIGN KEY (`type_id`) REFERENCES `type` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -127,7 +127,6 @@ CREATE TABLE `roomdetail` (
 
 LOCK TABLES `roomdetail` WRITE;
 /*!40000 ALTER TABLE `roomdetail` DISABLE KEYS */;
-INSERT INTO `roomdetail` VALUES (1,'101',150000,3,NULL,1),(2,'102',170000,3,NULL,2),(3,'103',200000,3,NULL,3);
 /*!40000 ALTER TABLE `roomdetail` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -144,7 +143,7 @@ CREATE TABLE `type` (
   `price` float DEFAULT NULL,
   `note` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -153,7 +152,6 @@ CREATE TABLE `type` (
 
 LOCK TABLES `type` WRITE;
 /*!40000 ALTER TABLE `type` DISABLE KEYS */;
-INSERT INTO `type` VALUES (1,'A',150000,NULL),(2,'B',170000,NULL),(3,'C',200000,NULL);
 /*!40000 ALTER TABLE `type` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -186,6 +184,7 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
+INSERT INTO `user` VALUES (1,'khoa','huynhkhoa09999@gmail.com',901911928,225928573,1,1,'admin','e10adc3949ba59abbe56e057f20f883e');
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -202,4 +201,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-11-17 21:10:43
+-- Dump completed on 2020-11-24 14:28:59

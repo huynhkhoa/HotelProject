@@ -1,4 +1,4 @@
-from flask import render_template, request, json, jsonify, redirect
+from flask import render_template, request, json, jsonify
 from hotel import app, login
 from flask_login import login_user
 from hotel.admin import *
@@ -18,17 +18,20 @@ def get_product_list():
         return jsonify({"products": products})
 
 
-@app.route("/login-admin", methods=["post", "get"])
+@app.route("/login-admin", methods=['post', 'get'])
 def login_admin():
-    if request.method == "POST":
-        username = request.form.get("username")
-        password = request.form.get("password", "")
-        password = str(hashlib.md5(password.strip().encode("utf-8")).hexdigest())
-        user = User.query.filter(User.username == username.strip(), User.password == password).first()
+    if request.method == 'POST':
+        username = request.form.get('username')
+        password = request.form.get('password', '')
+        password = str(hashlib.md5(password.encode("utf-8")).hexdigest())
+
+        user = User.query.filter(User.username == username,
+                                 User.password == password).first()
+
         if user:
             login_user(user=user)
 
-    return redirect("/admin")
+    return redirect('/admin')
 
 
 @login.user_loader
