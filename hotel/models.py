@@ -37,7 +37,7 @@ class RoomDetail(db.Model):
 class User(db.Model, UserMixin):
     __tablename__ = "user"
 
-    id = Column(Integer, primary_key=True, autoincrement=False)
+    id = Column(Integer, primary_key=True, autoincrement=True)
     name = Column(String(50), nullable=False)
     email = Column(String(50), nullable=False)
     phone = Column(Integer, nullable=False)
