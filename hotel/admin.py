@@ -17,10 +17,11 @@ class LogoutView(BaseView):
     def index(self):
         logout_user()
 
-        return redirect("/admin")
+        return redirect("/")
 
     def is_accessible(self):
         return current_user.is_authenticated
+
 
 class ContactView(BaseView):
     @expose('/')

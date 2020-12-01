@@ -27,6 +27,12 @@
 					<li class="nav-item @@contact__active">
 						<a class="nav-link" href="contact.html">Contact</a>
 					</li>
+					{% if current_user.is_authenticated %}
+						<li class="nav-item @@contact__active"><a href="{{ url_for('logout_usr') }}">Đăng xuất</a></li>
+					{% else %}
+						<li><a href="{{ url_for('register') }}">Đăng ký</a></li>
+						<li><a href="{{ url_for('login_admin') }}">Đăng nhập</a></li>
+					{% endif %}
 				</ul>
 				<a href="#booking" class="ml-3 book btn btn-secondary btn-style">Book Now</a>
 			</div>
