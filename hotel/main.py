@@ -36,7 +36,7 @@ def view_product_page():
     return render_template("book.html", title="product")
 
 
-@app.route("/login", methods=['post', 'get'])
+@app.route("/login", methods=['get', 'post'])
 def login_admin():
     if request.method == 'POST':
         username = request.form.get('username')
