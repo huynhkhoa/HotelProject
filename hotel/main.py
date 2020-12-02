@@ -11,7 +11,7 @@ def main():
     return render_template("home.html")
 
 
-@app.route("/home")
+@app.route("/home.html")
 def view_first_page():
     return render_template("home.html", title="home")
 
