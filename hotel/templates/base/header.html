@@ -16,16 +16,16 @@
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 				<ul class="navbar-nav ml-auto">
 					<li class="nav-item active">
-						<a class="nav-link" href="home.html">Home</a>
+						<li><a class="nav-link" href="{{ url_for('view_first_page') }}">Home</a></li>
 					</li>
 					<li class="nav-item @@about__active">
-						<a class="nav-link" href="about.html">About</a>
+						<li><a class="nav-link" href="{{ url_for('view_about_page') }}">About</a></li>
 					</li>
 					<li class="nav-item @@services__active">
-						<a class="nav-link" href="services.html">Services</a>
+						<li><a class="nav-link" href="{{ url_for('view_services_page') }}">Services</a></li>
 					</li>
 					<li class="nav-item @@contact__active">
-						<a class="nav-link" href="contact.html">Contact</a>
+						<li><a class="nav-link" href="{{ url_for('view_contact_page') }}">Contact</a></li>
 					</li>
 					{% if current_user.is_authenticated %}
 						<li class="nav-item @@logout__active">
@@ -37,7 +37,7 @@
 							<li><a class="nav-link" href="{{ url_for('login_admin') }}">SIGH IN</a></li>
 					{% endif %}
 				</ul>
-				<a href="book.html" class="ml-3 book btn btn-secondary btn-style">Book Now</a>
+				<a href="{{ url_for('view_book_page') }}" class="nar-link ml-3 book btn btn-secondary btn-style">Book Now</a>
 			</div>
 		</div>
 	</nav>
