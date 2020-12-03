@@ -1,13 +1,6 @@
 @charset "UTF-8";
-/*--
-Author: W3layouts
-Author URL: http://w3layouts.com
---*/
 /*!
  * Bootstrap v4.4.1 (https://getbootstrap.com/)
- * Copyright 2011-2019 The Bootstrap Authors
- * Copyright 2011-2019 Twitter, Inc.
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 :root {
   --blue: #007bff;
@@ -11227,7 +11220,8 @@ div#small-dialog iframe {
   background: #fff; }
 
 .w3l-about-us.best-rooms .maghny-gd-1 .row {
-  padding: 0 0px; }
+  padding: 0 0px;
+}
 
 .w3-about-2 .w3-services-ab {
   background-size: cover;
