@@ -18,9 +18,9 @@
 
           <ul>
             <h6 class="footer-title-29">Useful Links</h6>
-            <li><a href="index.html">Home</a></li>
+            <li><a href="home.html">Home</a></li>
             <li><a href="about.html">About hotels</a></li>
-            <li><a href="#blogposts"> Blog posts</a></li>
+            <li><a href="about.html"> Blog posts</a></li>
             <li><a href="contact.html">Contact us</a></li>
           </ul>
         </div>
@@ -70,6 +70,7 @@
  <button onclick="topFunction()" id="movetop" title="Go to top">
   &#10548;
 </button>
+
 <script>
   // When the user scrolls down 20px from the top of the document, show the button
   window.onscroll = function () {
@@ -90,5 +91,7 @@
     document.documentElement.scrollTop = 0;
   }
 </script>
+  <link href="{{ url_for('static', filename='css/style-starter.css') }}"
+          rel="stylesheet" />
 <!-- /move top -->
 </section>
