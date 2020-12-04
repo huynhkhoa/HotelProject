@@ -35,6 +35,10 @@ def view_services_page():
 def view_book_page():
     return render_template("book.html")
 
+@app.route("/room1")                          # toi page room1
+def view_book_room():
+    return render_template("room1.html")
+
 
 @app.route("/login", methods=['get', 'post'])    # toi page login
 def login_admin():
