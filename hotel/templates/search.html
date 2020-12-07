@@ -1,10 +1,77 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
-</head>
+
+<html>
+    {%block header %}
+    {%include 'base/header.html'%}
+    {% endblock %}
+    {%block scripts %}
+    {%include 'base/Scripts.html'%}
+    {% endblock %}
 <body>
-$END$
+    <section class="w3l-breadcrumb">                          <!--the trang bia -->
+        <div class="breadcrum-bg py-sm-5 py-4">
+            <div class="container py-lg-3">
+                <h2>Search</h2>
+                <p><a href="home.html">Home</a> &nbsp; / &nbsp; Searching</p>
+            </div>
+        </div>
+    </section>
+    <!-- ket thuc the trang bia -->
+
+<section class="w3l-availability-form" id="booking">        <!--the tim kiem-->
+    <div class="w3l-availability-form-main py-5">
+        <div class="container pt-lg-3 pb-lg-5">
+            <div class="forms-top">
+                <div class="form-right">
+                    <div class="form-inner-cont">
+                        <h3 class="title-small">Check Availability</h3>
+                        <form action="search-results.html" method="get" class="signin-form">
+                            <div class="row book-form">
+                                <div class="form-input col-md-4 col-sm-6 mt-3">
+                                    <label>Price </label>
+                                    <input type="number" name="from_price" placeholder="Min Price ($)"  />
+                                </div>
+                                <div class="form-input col-md-4 col-sm-6 mt-3">
+                                    <label>Price </label>
+                                    <input type="number" name="to_price" placeholder="Max Price ($)"  />
+                                </div>
+                                <div class="bottom-btn col-md-4 col-sm-6 mt-3">
+                                    <label>Check availability </label>
+                                    <input class="btn btn-style btn-danger w-100 px-2" type="submit" value="Check availability"/>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+ <!--ket thuc tim kiem-->
+
+<div class="w3l-about-us best-rooms py-5">
+    <div class="container py-lg-5 py-sm-4">
+        <div class="maghny-gd-1">
+            <div class="row mt-5">
+                {% for r in roomdetails %}
+                <div class="maghny-gd-1 col-lg-4 col-md-6 mt-lg-4 mt-4">
+                    <div class="maghny-grid">
+
+                        <figure class="effect-lily border-radius">
+                            <img class="img-fluid"src="{{ url_for('static', filename=r.image) }}">
+
+                        </figure>
+
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
 </body>
+
+{%block footer %}
+{%include 'base/footer.html'%}
+{% endblock %}
 </html>
