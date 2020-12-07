@@ -13,16 +13,35 @@
     <link href="https://fonts.googleapis.com/css?family=Lora:400,700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Cabin:400,500,600,700&display=swap" rel="stylesheet">
 
-    <!-- Css Styles -->gi
-    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <!-- Css Styles -->
+    <link href="{{ url_for('static', filename='css/roomdetail.css')}}" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/roomcss/bootstrap.min.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/roomcss/elegant-icons.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/roomcss/flaticon.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/roomcss/owl.carousel.min.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/roomcss/nice-select.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/roomcss/jquery-ui.min.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/roomcss/magnific-popup.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/roomcss/style.css')}}" type="text/css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
 </head>
 
 <body>
 {%block header %}
 {%include 'base/header.html'%}
 {% endblock %}
-    <!-- Room Details Section Begin -->
-    <section class="room-details-section spad">
+<section class="w3l-breadcrumb">
+    <div class="breadcrum-bg py-sm-5 py-4">
+        <div class="container py-lg-3">
+            <h2>Room1</h2>
+            <p><a href="home.html">Home</a> &nbsp; / &nbsp; Room</p>
+        </div>
+    </div>
+</section>
+<!-- Room Details Section Begin -->
+<section class="room-details-section spad">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8">
@@ -152,25 +171,25 @@
                         <form action="#">
                             <div class="check-date">
                                 <label for="date-in">Check In:</label>
-                                <input type="text" class="date-input" id="date-in">
+                                <input type="text" class="date-input hasDatepicker" id="date-in">
                                 <i class="icon_calendar"></i>
                             </div>
                             <div class="check-date">
                                 <label for="date-out">Check Out:</label>
-                                <input type="text" class="date-input" id="date-out">
+                                <input type="text" class="date-input hasDatepicker" id="date-out">
                                 <i class="icon_calendar"></i>
                             </div>
                             <div class="select-option">
                                 <label for="guest">Guests:</label>
-                                <select id="guest">
+                                <select id="guest" style="display: none;">
                                     <option value="">3 Adults</option>
-                                </select>
+                                </select><div class="nice-select" tabindex="0"><span class="current">3 Adults</span><ul class="list"><li data-value="" class="option selected focus">3 Adults</li></ul></div>
                             </div>
                             <div class="select-option">
                                 <label for="room">Room:</label>
-                                <select id="room">
+                                <select id="room" style="display: none;">
                                     <option value="">1 Room</option>
-                                </select>
+                                </select><div class="nice-select" tabindex="0"><span class="current">1 Room</span><ul class="list"><li data-value="" class="option selected">1 Room</li></ul></div>
                             </div>
                             <button type="submit">Check Availability</button>
                         </form>
@@ -179,16 +198,10 @@
             </div>
         </div>
     </section>
-    <!-- Room Details Section End -->
-    <!-- Js Plugins -->
-    <script src="js/jquery-3.3.1.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/jquery.magnific-popup.min.js"></script>
-    <script src="js/jquery.nice-select.min.js"></script>
-    <script src="js/jquery-ui.min.js"></script>
-    <script src="js/jquery.slicknav.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="js/main.js"></script>
+{%block footer %}
+{%include 'base/footer.html'%}
+{% endblock %}
+
 </body>
 
 </html>
