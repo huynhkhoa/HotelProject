@@ -14,15 +14,15 @@
     <link href="https://fonts.googleapis.com/css?family=Cabin:400,500,600,700&display=swap" rel="stylesheet">
 
     <!-- Css Styles -->
-    <link href="{{ url_for('static', filename='css/roomdetail.css')}}" rel="stylesheet" type="text/css">
-    <script src="./static/js/main.js"></script>
-    <script src="./static/js/jquery.nice-select.min.js"></script>
-    <script src="./static/js/jquery.magnific-popup.min.js"></script>
-    <script src="./static/js/jquery.nice-select.min.js"></script>
-    <script src="./static/js/jquery.slicknav.js"></script>
-    <script src="./static/js/jquery-ui.min.js"></script>
-    <script src="./static/js/owl.carousel.min.js"></script>
-    <script src="./static/js/jquery-3.3.1.min.js"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/roomcss/bootstrap.min.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/roomcss/elegant-icons.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/roomcss/owl.carousel.min.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/roomcss/nice-select.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/roomcss/jquery-ui.min.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/roomcss/magnific-popup.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/roomcss/style.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/roomcss/slicknav.min.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/roomcss/font-awesome.min.css')}}" type="text/css">
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
@@ -42,122 +42,116 @@
 </section>
 <!-- Room Details Section Begin -->
 <section class="room-details-section spad">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8">
-                <div class="room-details-item">
-                    <img src="./static/images/room-details.jpg" alt="">
-                    <div class="rd-text">
-                        <div class="rd-title">
-                            <h3>Premium King Room</h3>
-                            <div class="rdt-right">
-                                <div class="rating">
-                                    <i class="icon_star"></i>
-                                    <i class="icon_star"></i>
-                                    <i class="icon_star"></i>
-                                    <i class="icon_star"></i>
-                                    <i class="icon_star-half_alt"></i>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="room-details-item">
+                        <img src="./static/images/room-details.jpg" alt="">
+                        <div class="rd-text">
+                            <div class="rd-title">
+                                <h3>Premium King Room</h3>
+                                <div class="rdt-right">
+                                    <a href="#">Booking Now</a>
                                 </div>
-                                <a href="#">Booking Now</a>
                             </div>
+                            <h2>159$<span>/Pernight</span></h2>
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td class="r-o">Size:</td>
+                                        <td>30 ft</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="r-o">Capacity:</td>
+                                        <td>Max persion 5</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="r-o">Bed:</td>
+                                        <td>King Beds</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="r-o">Services:</td>
+                                        <td>Wifi, Television, Bathroom,...</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <p class="f-para">Motorhome or Trailer that is the question for you. Here are some of the
+                                advantages and disadvantages of both, so you will be confident when purchasing an RV.
+                                When comparing Rvs, a motorhome or a travel trailer, should you buy a motorhome or fifth
+                                wheeler? The advantages and disadvantages of both are studied so that you can make your
+                                choice wisely when purchasing an RV. Possessing a motorhome or fifth wheel is an
+                                achievement of a lifetime. It can be similar to sojourning with your residence as you
+                                search the various sites of our great land, America.</p>
+                            <p>The two commonly known recreational vehicle classes are the motorized and towable.
+                                Towable rvs are the travel trailers and the fifth wheel. The rv travel trailer or fifth
+                                wheel has the attraction of getting towed by a pickup or a car, thus giving the
+                                adaptability of possessing transportation for you when you are parked at your campsite.
+                            </p>
                         </div>
-                        <h2>159$<span>/Pernight</span></h2>
-                        <table>
-                            <tbody>
-                            <tr>
-                                <td class="r-o">Size:</td>
-                                <td>30 ft</td>
-                            </tr>
-                            <tr>
-                                <td class="r-o">Capacity:</td>
-                                <td>Max persion 5</td>
-                            </tr>
-                            <tr>
-                                <td class="r-o">Bed:</td>
-                                <td>King Beds</td>
-                            </tr>
-                            <tr>
-                                <td class="r-o">Services:</td>
-                                <td>Wifi, Television, Bathroom,...</td>
-                            </tr>
-                            </tbody>
-                        </table>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-4">
-                <div class="room-booking">
-                    <h3>Your Reservation</h3>
+                <div class="col-lg-4">
+                    <div class="room-booking">
+                        <h3>Your Reservation</h3>
                         <form action="#">
                             <div class="check-date">
-                                <label for="date-in">Check In:</label>
-                                <input type="text" class="date-input hasDatepicker" id="date-in">
-                                <i class="icon_calendar"></i>
-                            </div>
-                            <div class="check-date">
-                                <label for="date-out">Check Out:</label>
-                                <input type="text" class="date-input hasDatepicker" id="date-out">
-                                <i class="icon_calendar"></i>
-                            </div>
+                            <label for="date-in">Check In:</label>
+                            <input type="date" class="date-input" id="date-in">
+                            <!--                                <i class="fa fa-calendar"></i>-->
+                        </div>
+                        <div class="check-date">
+                            <label for="date-out">Check Out:</label>
+                            <input type="date" class="date-input" id="date-out">
+                        </div>
                             <div class="select-option">
                                 <label for="guest">Guests:</label>
                                 <select id="guest" style="display: none;">
                                     <option value="">3 Adults</option>
-                                </select><div class="nice-select" tabindex="0"><span class="current">3 Adults</span><ul class="list"><li data-value="" class="option selected focus">3 Adults</li></ul></div>
+                                </select>
+                                <div class="nice-select" tabindex="0">
+                                    <span class="current">3 Adults</span>
+                                    <ul class="list">
+                                        <li data-value="" class="option selected focus">3 Adults</li>
+                                        <li data-value="" class="option selected focus">2 Adults</li>
+                                        <li data-value="" class="option selected focus">1 Adults</li>
+
+                                    </ul>
+                                </div>
                             </div>
                             <div class="select-option">
-                                <label for="room">Room:</label>
-                                <select id="room" style="display: none;">
-                                    <option value="">1 Room</option>
-                                </select><div class="nice-select" tabindex="0"><span class="current">1 Room</span><ul class="list"><li data-value="" class="option selected">1 Room</li></ul></div>
+                                <label for="foreigner">Are there any foreigner?</label>
+                                <select id="foreigner" style="display: none;">
+                                    <option value="">No foreigner</option>
+                                </select>
+                                <div class="nice-select" tabindex="0">
+                                    <span class="current">No foreigner</span>
+                                    <ul class="list">
+                                        <li data-value="" class="option selected">No foreigner</li>
+                                        <li data-value="" class="option selected">1 foreigner</li>
+                                        <li data-value="" class="option selected">2 foreigner</li>
+                                        <li data-value="" class="option selected">3 foreigner</li>
+                                    </ul>
+                                </div>
                             </div>
                             <button type="submit">Check Availability</button>
                         </form>
-<!--                    <form action="#">-->
-<!--                        <div class="check-date">-->
-<!--                            <label for="date-in">Check In:</label>-->
-<!--                            <input type="date" class="date-input" id="date-in">-->
-<!--                            &lt;!&ndash;                                <i class="fa fa-calendar"></i>&ndash;&gt;-->
-<!--                        </div>-->
-<!--                        <div class="check-date">-->
-<!--                            <label for="date-out">Check Out:</label>-->
-<!--                            <input type="date" class="date-input" id="date-out">-->
-
-<!--                        </div>-->
-<!--                        <div class="select-option">-->
-<!--                            <label for="guest">Guests:</label>-->
-<!--                            <select id="guest">-->
-<!--                                <option value>1 Adults</option>-->
-
-<!--                            </select>-->
-<!--                            <div class="nice-select open" tabindex="0">-->
-<!--                                <span class="current">-->
-<!--                                    3 Adults-->
-<!--                                </span>-->
-<!--                                <ul class="list">-->
-<!--                                    <li data-value="" class="option selected focus">3 Adults</li>-->
-<!--                                </ul>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                        <div class="select-option">-->
-<!--                            <label for="foreigner">Forigner:</label>-->
-<!--                            <select id="foreigner">-->
-<!--                                <option value="">1 people</option>-->
-<!--                                <option value="">2 people</option>-->
-<!--                                <option value="">3 people</option>-->
-<!--                            </select>-->
-<!--                        </div>-->
-<!--                        <button type="submit">Check Availability</button>-->
-<!--                    </form>-->
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 {%block footer %}
 {%include 'base/footer.html'%}
 {% endblock %}
-
+    <!-- Js Plugins -->
+    <script src="./static/js/jquery-3.3.1.min.js"></script>
+    <script src="./static/js/bootstrap.min.js"></script>
+    <script src="./static/js/jquery.magnific-popup.min.js"></script>
+    <script src="./static/js/jquery.nice-select.min.js"></script>
+    <script src="./static/js/jquery-ui.min.js"></script>
+    <script src="./static/js/jquery.slicknav.js"></script>
+    <script src="./static/js/owl.carousel.min.js"></script>
+    <script src="./static/js/main.js"></script>
 </body>
 
 </html>
