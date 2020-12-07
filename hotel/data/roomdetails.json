@@ -1,0 +1,37 @@
+[{
+  "id": 1,
+  "name": "101",
+  "price": 150000,
+  "max_guess": 5,
+  "description": null,
+  "image": "images/book1.jpg" ,
+  "type_id": 1,
+  "booking_id": 1
+},{
+  "id": 2,
+  "name": "102",
+  "price": 170000,
+  "max_guess": 5,
+  "description": null,
+  "image": "images/book2.jpg" ,
+  "type_id": 2,
+  "booking_id": 2
+},{
+  "id": 3,
+  "name": "103",
+  "price": 200000,
+  "max_guess": 5,
+  "description": null,
+  "image": "images/book3.jpg" ,
+  "type_id": 3,
+  "booking_id": 3
+},{
+  "id": 4,
+  "name": "104",
+  "price": 250000,
+  "max_guess": 5,
+  "description": null,
+  "image": "images/about1.jpg" ,
+  "type_id": 4,
+  "booking_id": 4
+}]
