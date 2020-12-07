@@ -11,7 +11,6 @@ class Type(db.Model):
     __tablename__ = "type"
     id = Column(Integer, primary_key=True, autoincrement=True)
     name = Column(String(50), nullable=False)
-    price = Column(Float, default=0)
     note = Column(String(255), nullable=True)
 
     roomdetails = relationship('RoomDetail', backref='type', lazy=True)
@@ -37,9 +36,9 @@ class RoomDetail(db.Model):
     price = Column(Float, default=0)
     max_guess = Column(Integer, nullable=True)
     description = Column(String(255), nullable=True)
-
+    image = Column(String(255))
     type_id = Column(Integer, ForeignKey(Type.id), nullable=False)
-    booking_id = Column(Integer, ForeignKey(Booking.id), nullable=False)
+    booking_id = Column(Integer, ForeignKey(Booking.id))
 
     @property
     def __str__(self):
