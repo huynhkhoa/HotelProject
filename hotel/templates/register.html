@@ -7,11 +7,12 @@
             rel="stylesheet" />
     <link href="{{ url_for('static', filename='css/style-register.css') }}"
           rel="stylesheet" />
+
 </head>
 <body>
-{%block header %}
-{%include 'base/header.html'%}
-{% endblock %}
+    {%block header %}
+    {%include 'base/header.html'%}
+    {% endblock %}
     <div class="container">
         {% if err_msg %}
         <div class="alert alert-warning">
@@ -82,7 +83,7 @@
                                        placeholder="Confirm Password"/>
                             </div>
                             <div class="form-group">
-                                <label for="avatar">Ảnh đại diện</label>
+                                <label for="avatar">Avatar:</label>
                                 <input type="file"
                                        id="avatar"
                                        name="avatar"
@@ -90,7 +91,7 @@
                             </div>
 
                             <div class="form-group">
-                              <input type="submit" class="btn btnSubmit btn-primary btn-block" value="Đăng ký"/>
+                              <input type="submit" class="btn btnSubmit btn-primary btn-block" value="Register"/>
                             </div>
                           </form>
                         </div>
