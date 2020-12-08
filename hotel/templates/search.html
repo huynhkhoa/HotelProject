@@ -8,147 +8,74 @@
     {%include 'base/Scripts.html'%}
     {% endblock %}
 <body>
-<section class="w3l-breadcrumb">
-    <div class="breadcrum-bg py-sm-5 py-4">
-        <div class="container py-lg-3">
-            <h2>Search</h2>
-            <p><a href="home.html">Home</a> &nbsp; / &nbsp; Searching</p>
+    <section class="w3l-breadcrumb">                        <!--the trang bia -->
+        <div class="breadcrum-bg py-sm-5 py-4">
+            <div class="container py-lg-3">
+                <h2>Search</h2>
+                <p><a href="home.html">Home</a> &nbsp; / &nbsp; Searching</p>
+            </div>
         </div>
-    </div>
-</section>
-<div class="w3l-about-us best-rooms py-5">
-    <div class="container py-lg-5 py-sm-4">
-        <div class="maghny-gd-1">
-            <div class="row mt-5">
-                <div class="maghny-gd-1 col-lg-4 col-md-6 mt-lg-0 mt-4">
-                    <div class="maghny-grid">
-                        <figure class="effect-lily border-radius">
-                            <img class="img-fluid" src="static/images/about1.jpg">
-                            <figcaption class="w3set-hny">
-                                <div>
-                                    <h4>Deluxe Twin<span> Room</span></h4>
-                                    <p>from 100$</p>
+    </section>
+    <!-- ket thuc the trang bia -->
+
+<section class="w3l-availability-form" id="booking">        <!--the tim kiem-->
+    <div class="w3l-availability-form-main py-5">
+        <div class="container pt-lg-3 pb-lg-5">
+            <div class="forms-top">
+                <div class="form-right">
+                    <div class="form-inner-cont">
+                        <h3 class="title-small">Check Availability</h3>
+                        <form method="get" class="signin-form">
+                            <div class="row book-form">
+                                <div class="form-input col-md-4 col-sm-6 mt-3">
+                                    <label>Price </label>
+                                    <input type="number" name="from_price" placeholder="Min Price ($)"  />
                                 </div>
-                            </figcaption>
-                        </figure>
+                                <div class="form-input col-md-4 col-sm-6 mt-3">
+                                    <label>Price </label>
+                                    <input type="number" name="to_price" placeholder="Max Price ($)"  />
+                                </div>
+                                <div class="bottom-btn col-md-4 col-sm-6 mt-3">
+                                    <label>Check availability </label>
+                                    <input class="btn btn-style btn-danger w-100 px-2" type="submit" value="Check availability"/>
+                                </div>
+                            </div>
+                        </form>
                     </div>
                 </div>
-                <div class="maghny-gd-1 col-lg-4 col-md-6 mt-lg-0 mt-4">
-                        <div class="maghny-grid">
-                            <figure class="effect-lily border-radius">
-                                <img class="img-fluid" src="static/images/about2.jpg">
-                                <figcaption class="w3set-hny">
-                                    <div>
-                                        <h4>Deluxe<span> Room</span></h4>
-                                        <p>from 100$</p>
-                                    </div>
-
-                                </figcaption>
-                            </figure>
-                        </div>
-                    </div>
-                <div class="maghny-gd-1 col-lg-4 col-md-6 mt-lg-0 mt-4">
-                        <div class="maghny-grid">
-                            <figure class="effect-lily border-radius">
-                                <img class="img-fluid" src="static/images/about3.jpg">
-                                <figcaption class="w3set-hny">
-                                    <div>
-                                        <h4>Residential<span> Room</span></h4>
-                                        <p>from 100$</p>
-                                    </div>
-
-                                </figcaption>
-                            </figure>
-                        </div>
-                    </div>
-                <div class="maghny-gd-1 col-lg-4 col-md-6 mt-lg-4 mt-4">
-                        <div class="maghny-grid">
-                            <figure class="effect-lily border-radius">
-                                <img class="img-fluid" src="static/images/book6.jpg">
-                                <figcaption class="w3set-hny">
-                                    <div>
-                                        <h4>Deluxe King<span> Suite</span></h4>
-                                        <p>from 200$</p>
-                                    </div>
-
-                                </figcaption>
-                            </figure>
-                        </div>
-                    </div>
-                <div class="maghny-gd-1 col-lg-4 col-md-6 mt-lg-4 mt-4">
-                        <div class="maghny-grid">
-                            <figure class="effect-lily border-radius">
-                                <img class="img-fluid" src="static/images/book5.jpg">
-                                <figcaption class="w3set-hny">
-                                    <div>
-                                        <h4>Grand Deluxe Family<span> Suite</span></h4>
-                                        <p>from 150$ </p>
-                                    </div>
-
-                                </figcaption>
-                            </figure>
-                        </div>
-                    </div>
-                <div class="maghny-gd-1 col-lg-4 col-md-6 mt-lg-4 mt-4">
-                        <div class="maghny-grid">
-                            <figure class="effect-lily border-radius">
-                                <img class="img-fluid" src="static/images/book4.jpg">
-                                <figcaption class="w3set-hny">
-                                    <div>
-                                        <h4>Deluxe Twin<span> Sea View</span></h4>
-                                        <p> from 150$ </p>
-                                    </div>
-
-                                </figcaption>
-                            </figure>
-                        </div>
-                    </div>
-                <div class="maghny-gd-1 col-lg-4 col-md-6 mt-lg-4 mt-4">
-                        <div class="maghny-grid">
-                            <figure class="effect-lily border-radius">
-                                <img class="img-fluid" src="static/images/book3.jpg">
-                                <figcaption class="w3set-hny">
-                                    <div>
-                                        <h4>DPANORAMA <span> SUITE</span></h4>
-                                        <p> from 200$ </p>
-                                    </div>
-
-                                </figcaption>
-                            </figure>
-                        </div>
-                    </div>
-                <div class="maghny-gd-1 col-lg-4 col-md-6 mt-lg-4 mt-4">
-                        <div class="maghny-grid">
-                            <figure class="effect-lily border-radius">
-                                <img class="img-fluid" src="static/images/book2.jpg">
-                                <figcaption class="w3set-hny">
-                                    <div>
-                                        <h4>DEXCUTIVE <span>SKYROOM</span></h4>
-                                        <p> from 300$ </p>
-                                    </div>
-
-                                </figcaption>
-                            </figure>
-                        </div>
-                    </div>
-                <div class="maghny-gd-1 col-lg-4 col-md-6 mt-lg-4 mt-4">
-                        <div class="maghny-grid">
-                            <figure class="effect-lily border-radius">
-                                <img class="img-fluid" src="static/images/book1.jpg">
-                                <figcaption class="w3set-hny">
-                                    <div>
-                                        <h4>DPRESIDENTIAL<span> SUITE</span></h4>
-                                        <p> from 400$ </p>
-                                    </div>
-
-                                </figcaption>
-                            </figure>
-                        </div>
-                    </div>
             </div>
         </div>
     </div>
-</div>
+</section>
+ <!--ket thuc tim kiem-->
+<section class="team py-5" id="team">
+	<div class="container py-lg-5 py-sm-4">
+		<div class="row inner-sec-w3layouts-w3pvt-lauinfo">
+			<div class="row mt-5">
+                {% for r in roomdetails %}
+                <div class="col-sm-4">
+                    <div class="team-grids text-center">
+                        <img class="img-fluid"src="{{ url_for('static', filename=r.image) }}" alt="">
+                        <div class="team-info">
+                            <div class="caption">
+                                <h4><td>{{ "{:,}".format(r.price) }} VNĐ</td></h4>
+                                <h6><td>{{ r.description }}</td></h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="social-icons-section text-center">
+                        <H1><small><small href="{{url_for('room_detail', roomdetail_id=r.id) }}">{{ r.name }}</small></small> </H1>
+                        <a class="fac" href="#url">
+                            <i class="fa fa-bed"></i>
+                        </a>
+                    </div>
+                </div>
+
+                {% endfor %}
+			</div> <!-- An -->
+		</div>
+	</div>
+</section>
 </body>
 
 {%block footer %}

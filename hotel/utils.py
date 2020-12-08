@@ -1,5 +1,5 @@
-import  hashlib
-from hotel.models import User
+import hashlib, json
+from hotel.models import *
 from hotel import db
 
 
@@ -29,3 +29,18 @@ def cart_stats(cart):
     price = sum([p['price'] for p in products])
 
     return quantity, price
+
+
+def read_roomdetails(from_price=None, to_price=None) -> object:
+
+    roomdetails = RoomDetail.query
+
+    if from_price and to_price:
+        roomdetails = roomdetails.filter(RoomDetail.price.__gt__(from_price),
+                                         RoomDetail.price.__lt__(to_price))
+
+    return roomdetails.all()
+
+
+def get_roomdetail_by_id(roomdetail_id):
+    return RoomDetail.query.get(roomdetail_id)

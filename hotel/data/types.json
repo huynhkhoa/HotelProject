@@ -1,16 +1,11 @@
 [{
   "id": 1,
-  "room": 101,
-  "kind of room": "A",
-  "unit price": 150000
+  "name": "Economy Room"
 },{
   "id": 2,
-  "room": 102,
-  "kind of room": "B",
-  "unit price": 170000
+  "name": "Deluxe Room"
 },{
   "id": 3,
-  "room": 103,
-  "kind of room": "C",
-  "unit price": 200000
-}]
+  "name": "Business Room"
+}
+]
