@@ -7,6 +7,8 @@
     {%block scripts %}
     {%include 'base/Scripts.html'%}
     {% endblock %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/roomcss/style.css')}}" type="text/css">
+
 <body>
 <section class="w3l-breadcrumb">
     <div class="breadcrum-bg py-sm-5 py-4">
@@ -24,7 +26,7 @@
 		</div>
 	</div>
 </div>
-<section class="team py-5" id="team">
+<section class="team py-5" id="LUXURY">
 	<div class="container py-lg-4 py-sm-3">
 		<div class="row inner-sec-w3layouts-w3pvt-lauinfo">
 			<div class="col-sm-4">
@@ -39,7 +41,7 @@
 				</div>
 				<div class="social-icons-section text-center">
                     <H1><small><small>PANORAMA SUITE</small></small> </H1>
-					<a class="fac" href="#url">
+					<a class="fac" href="room1">
 						<i class="fa fa-bed"></i>
 					</a>
 				</div>
@@ -56,11 +58,11 @@
 				</div>
 				<div class="social-icons-section text-center">
                     <H1><small><small>EXCUTIVE SKYROOM</small></small> </H1>
-					<a class="fac" href="#url">
+					<a class="fac" href="room1">
 						<i class="fa fa-bed"></i>
 					</a>
 				</div>
-			</div> <!-- Khoa -->
+			</div>
 			<div class="col-sm-4">
 				<div class="team-grids text-center">
 					<img src="static/images/book3.jpg" class="img-fluid" alt="">
@@ -73,20 +75,20 @@
 				</div>
 				<div class="social-icons-section text-center">
                     <H1><small><small>PRESIDENTIAL SUITE</small></small> </H1>
-                    <a class="fac" href="book">
+                    <a class="fac" href="room1">
 						<i class="fa fa-bed"></i>
 					</a>
 				</div>
-			</div> <!-- Tai -->
+			</div>
 		</div>
 	</div>
 </section>
-<section class="w3-about-2" id="features">
+<section class="w3-about-2" id="DELUXE SUITE">
     <div class="w3-services-ab py-5">
         <div class="container py-lg-4 py-md-3">
             <div class="row w3-services-grids">
                 <div class="col-lg-9 w3-services-right-grid pl-lg-5 mx-auto">
-                    <h4 class="title-big text-center mb-md-5 mb-4" style="font-size:48px">Deluxe room</h4>
+                    <h4 class="title-big text-center mb-md-5 mb-4" style="font-size:48px">Deluxe Room & Suite</h4>
                 </div>
             </div>
         </div>
@@ -110,82 +112,81 @@
                     </div>
                 </div>
                 <div class="maghny-gd-1 col-lg-4 col-md-6 mt-md-0 mt-4">
-                    <div class="maghny-grid">
-                        <figure class="effect-lily border-radius">
-                            <img class="img-fluid" src="static/images/about2.jpg">
-                            <figcaption class="w3set-hny">
-                                <div>
-                                    <h4>Deluxe<span> Room</span></h4>
-                                    <p>from 100$</p>
-                                </div>
+                        <div class="maghny-grid">
+                            <figure class="effect-lily border-radius">
+                                <img class="img-fluid" src="static/images/about2.jpg">
+                                <figcaption class="w3set-hny">
+                                    <div>
+                                        <h4>Deluxe<span> Room</span></h4>
+                                        <p>from 100$</p>
+                                    </div>
 
-                            </figcaption>
-                        </figure>
+                                </figcaption>
+                            </figure>
+                        </div>
                     </div>
-                </div>
                 <div class="maghny-gd-1 col-lg-4 col-md-6 mt-lg-0 mt-4">
-                    <div class="maghny-grid">
-                        <figure class="effect-lily border-radius">
-                            <img class="img-fluid" src="static/images/about3.jpg">
-                            <figcaption class="w3set-hny">
-                                <div>
-                                    <h4>Residential<span> Room</span></h4>
-                                    <p>from 100$</p>
-                                </div>
+                        <div class="maghny-grid">
+                            <figure class="effect-lily border-radius">
+                                <img class="img-fluid" src="static/images/about3.jpg">
+                                <figcaption class="w3set-hny">
+                                    <div>
+                                        <h4>Residential<span> Room</span></h4>
+                                        <p>from 100$</p>
+                                    </div>
 
-                            </figcaption>
-                        </figure>
+                                </figcaption>
+                            </figure>
+                        </div>
                     </div>
-                </div>
                 <div class="maghny-gd-1 col-lg-4 col-md-6 mt-lg-4 mt-4">
-                    <div class="maghny-grid">
-                        <figure class="effect-lily border-radius">
-                            <img class="img-fluid" src="static/images/book6.jpg">
-                            <figcaption class="w3set-hny">
-                                <div>
-                                    <h4>Deluxe King<span> Suite</span></h4>
-                                    <p>from 200$</p>
-                                </div>
+                        <div class="maghny-grid">
+                            <figure class="effect-lily border-radius">
+                                <img class="img-fluid" src="static/images/book6.jpg">
+                                <figcaption class="w3set-hny">
+                                    <div>
+                                        <h4>Deluxe King<span> Suite</span></h4>
+                                        <p>from 200$</p>
+                                    </div>
 
-                            </figcaption>
-                        </figure>
+                                </figcaption>
+                            </figure>
+                        </div>
                     </div>
-                </div>
                 <div class="maghny-gd-1 col-lg-4 col-md-6 mt-lg-4 mt-4">
-                    <div class="maghny-grid">
-                        <figure class="effect-lily border-radius">
-                            <img class="img-fluid" src="static/images/book5.jpg">
-                            <figcaption class="w3set-hny">
-                                <div>
-                                    <h4>Grand Deluxe Family<span> Suite</span></h4>
-                                    <p>from 150$ </p>
-                                </div>
+                        <div class="maghny-grid">
+                            <figure class="effect-lily border-radius">
+                                <img class="img-fluid" src="static/images/book5.jpg">
+                                <figcaption class="w3set-hny">
+                                    <div>
+                                        <h4>Grand Deluxe Family<span> Suite</span></h4>
+                                        <p>from 150$ </p>
+                                    </div>
 
-                            </figcaption>
-                        </figure>
+                                </figcaption>
+                            </figure>
+                        </div>
                     </div>
-                </div>
                 <div class="maghny-gd-1 col-lg-4 col-md-6 mt-lg-4 mt-4">
-                    <div class="maghny-grid">
-                        <figure class="effect-lily border-radius">
-                            <img class="img-fluid" src="static/images/book4.jpg">
-                            <figcaption class="w3set-hny">
-                                <div>
-                                    <h4>Deluxe Twin<span> Sea View</span></h4>
-                                    <p> from 150$ </p>
-                                </div>
+                        <div class="maghny-grid">
+                            <figure class="effect-lily border-radius">
+                                <img class="img-fluid" src="static/images/book4.jpg">
+                                <figcaption class="w3set-hny">
+                                    <div>
+                                        <h4>Deluxe Twin<span> Sea View</span></h4>
+                                        <p> from 150$ </p>
+                                    </div>
 
-                            </figcaption>
-                        </figure>
+                                </figcaption>
+                            </figure>
+                        </div>
                     </div>
-                </div>
-
             </div>
         </div>
     </div>
 </div>
-</body>
 
+</body>
 {%block footer %}
 {%include 'base/footer.html'%}
 {% endblock %}
