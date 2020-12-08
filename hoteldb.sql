@@ -23,15 +23,9 @@ DROP TABLE IF EXISTS `booking`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `booking` (
-  `id` varchar(50) NOT NULL,
-  `roomdetail_id` int NOT NULL,
-  `order_id` int NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `roomdetail_id` (`roomdetail_id`),
-  KEY `order_id` (`order_id`),
-  CONSTRAINT `booking_ibfk_1` FOREIGN KEY (`roomdetail_id`) REFERENCES `roomdetail` (`id`),
-  CONSTRAINT `booking_ibfk_2` FOREIGN KEY (`order_id`) REFERENCES `order` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  `id` int NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -54,13 +48,10 @@ CREATE TABLE `invoice` (
   `id` int NOT NULL AUTO_INCREMENT,
   `joined_date` date DEFAULT NULL,
   `order_id` int NOT NULL,
-  `user_id` int NOT NULL,
   PRIMARY KEY (`id`),
   KEY `order_id` (`order_id`),
-  KEY `user_id` (`user_id`),
-  CONSTRAINT `invoice_ibfk_1` FOREIGN KEY (`order_id`) REFERENCES `order` (`id`),
-  CONSTRAINT `invoice_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  CONSTRAINT `invoice_ibfk_1` FOREIGN KEY (`order_id`) REFERENCES `order` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -83,13 +74,18 @@ CREATE TABLE `order` (
   `id` int NOT NULL AUTO_INCREMENT,
   `date_arrive` date DEFAULT NULL,
   `NoDay` int NOT NULL,
-  `noguess` int NOT NULL,
+  `Noguess` int NOT NULL,
   `NoRoom` int NOT NULL,
+  `foregin` tinyint(1) NOT NULL,
   `user_id` int NOT NULL,
+  `booking_id` int NOT NULL,
   PRIMARY KEY (`id`),
   KEY `user_id` (`user_id`),
-  CONSTRAINT `order_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  KEY `booking_id` (`booking_id`),
+  CONSTRAINT `order_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`),
+  CONSTRAINT `order_ibfk_2` FOREIGN KEY (`booking_id`) REFERENCES `booking` (`id`),
+  CONSTRAINT `order_chk_1` CHECK ((`foregin` in (0,1)))
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -113,12 +109,16 @@ CREATE TABLE `roomdetail` (
   `name` varchar(50) NOT NULL,
   `price` float DEFAULT NULL,
   `max_guess` int DEFAULT NULL,
-  `description` varchar(255) DEFAULT NULL,
+  `description` varchar(500) DEFAULT NULL,
+  `image` varchar(255) DEFAULT NULL,
   `type_id` int NOT NULL,
+  `booking_id` int DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `type_id` (`type_id`),
-  CONSTRAINT `roomdetail_ibfk_1` FOREIGN KEY (`type_id`) REFERENCES `type` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  KEY `booking_id` (`booking_id`),
+  CONSTRAINT `roomdetail_ibfk_1` FOREIGN KEY (`type_id`) REFERENCES `type` (`id`),
+  CONSTRAINT `roomdetail_ibfk_2` FOREIGN KEY (`booking_id`) REFERENCES `booking` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -127,7 +127,7 @@ CREATE TABLE `roomdetail` (
 
 LOCK TABLES `roomdetail` WRITE;
 /*!40000 ALTER TABLE `roomdetail` DISABLE KEYS */;
-INSERT INTO `roomdetail` VALUES (1,'101',150000,3,NULL,1),(2,'102',170000,3,NULL,2),(3,'103',200000,3,NULL,3);
+INSERT INTO `roomdetail` VALUES (1,'PANORAMA SUITE',150000,3,'Located on 25-29 floors, our Executive rooms bring a unique and memorable experience with access to Executive Lounge (on 30th floor) offering complimentary breakfast, exclusive...','images/book1.jpg',1,NULL),(2,'EXCUTIVE SKYROOM',150000,3,'Our Executive suites with private living rooms are all located on the executive floors. You can enjoy 46 inch LED IPTV, Espresso coffee machine and in-room fitness at this...','images/book2.jpg',1,NULL),(3,'PRESIDENTIAL SUITE',150000,3,'35m2-large contemporary style room provides a great comfort with modern facilities. 154 Superior rooms feature free Wi-Fi, 40 inch...','images/book3.jpg',1,NULL),(4,'Deluxe Twin Room',170000,3,'Twin Room from 6 to 9 floor: 40 square meters','images/about1.jpg',2,NULL),(5,'Deluxe Room',170000,3,'Deluxe rooms featuring cutting-edge designer bathtub, a separate rain-shower, Espresso coffee machine, IPTV and free Wi-Fi.','images/about2.jpg',2,NULL),(6,'Residential Room',170000,3,'Our 5-star luxury Deluxe and Premier Rooms are designed with both business and leisure travelers in mind.','images/about3.jpg',2,NULL),(7,'Deluxe King Suite',200000,3,'The limited edition Suite offers the perfect venue to celebrate for romantic honeymooners, anniversaries or an excuse to indulge in some romance.','images/book6.jpg',3,NULL),(8,'Grand Deluxe Family Suite',200000,3,'Our 5-star luxury Deluxe and Premier Rooms are designed with both business and leisure travelers in mind. Wonderfully soft beds and comfortable furnishings make every stay a pleasure, every room offers a marble bathroom or shower, writing desk and complimentary Wi-Fi to keep you in touch with friends, family and colleagues.','images/book5.jpg',3,NULL),(9,'Deluxe Twin Sea View',200000,3,'The limited edition Pullman Suite offers the perfect venue to celebrate for romantic honeymooners, anniversaries or an excuse to indulge in some romance. Featuring a contemporary designed one-bedroom studio and private bathtub for a deep soak.','images/book4.jpg',3,NULL);
 /*!40000 ALTER TABLE `roomdetail` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -141,10 +141,9 @@ DROP TABLE IF EXISTS `type`;
 CREATE TABLE `type` (
   `id` int NOT NULL AUTO_INCREMENT,
   `name` varchar(50) NOT NULL,
-  `price` float DEFAULT NULL,
   `note` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -153,7 +152,7 @@ CREATE TABLE `type` (
 
 LOCK TABLES `type` WRITE;
 /*!40000 ALTER TABLE `type` DISABLE KEYS */;
-INSERT INTO `type` VALUES (1,'A',150000,NULL),(2,'B',170000,NULL),(3,'C',200000,NULL);
+INSERT INTO `type` VALUES (1,'Economy Room',NULL),(2,'Deluxe Room',NULL),(3,'Business Room',NULL);
 /*!40000 ALTER TABLE `type` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -165,19 +164,19 @@ DROP TABLE IF EXISTS `user`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `user` (
-  `id` int NOT NULL,
+  `id` int NOT NULL AUTO_INCREMENT,
   `name` varchar(50) NOT NULL,
   `email` varchar(50) NOT NULL,
   `phone` int NOT NULL,
   `identity_card` int NOT NULL,
-  `foregin` tinyint(1) NOT NULL,
   `active` tinyint(1) DEFAULT NULL,
   `username` varchar(50) NOT NULL,
   `password` varchar(50) NOT NULL,
+  `avatar` varchar(100) DEFAULT NULL,
+  `user_role` enum('USER','ADMIN') DEFAULT NULL,
   PRIMARY KEY (`id`),
-  CONSTRAINT `user_chk_1` CHECK ((`foregin` in (0,1))),
-  CONSTRAINT `user_chk_2` CHECK ((`active` in (0,1)))
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  CONSTRAINT `user_chk_1` CHECK ((`active` in (0,1)))
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -202,4 +201,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-11-17 21:10:43
+-- Dump completed on 2020-12-08 15:07:08
