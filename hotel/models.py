@@ -78,6 +78,8 @@ class Order(db.Model):
     Noguess = Column(Integer, nullable=False)
     NoRoom = Column(Integer, nullable=False)
     foregin = Column(Boolean, nullable=False)
+    quantity = Column(Integer, default=0)
+    price = Column(Float, default=0)
 
     user_id = Column(Integer, ForeignKey(User.id), nullable=False)
     booking_id = Column(Integer, ForeignKey(Booking.id), nullable=False)
