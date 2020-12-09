@@ -5,8 +5,7 @@
   "max_guess": 5,
   "description": null,
   "image": "images/book1.jpg" ,
-  "type_id": 1,
-  "booking_id": 1
+  "type_id": 1
 },{
   "id": 2,
   "name": "102",
@@ -14,8 +13,7 @@
   "max_guess": 5,
   "description": null,
   "image": "images/book2.jpg" ,
-  "type_id": 2,
-  "booking_id": 2
+  "type_id": 2
 },{
   "id": 3,
   "name": "103",
@@ -23,8 +21,7 @@
   "max_guess": 5,
   "description": null,
   "image": "images/book3.jpg" ,
-  "type_id": 3,
-  "booking_id": 3
+  "type_id": 3
 },{
   "id": 4,
   "name": "104",
@@ -32,6 +29,5 @@
   "max_guess": 5,
   "description": null,
   "image": "images/about1.jpg" ,
-  "type_id": 4,
-  "booking_id": 4
+  "type_id": 4
 }]
