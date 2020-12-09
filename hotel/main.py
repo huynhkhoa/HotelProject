@@ -36,7 +36,12 @@ def view_book_page():
     return render_template('book.html')
 
 
-@app.route("/search")                      # toi page search
+@app.route("/bill")                          # toi page bill
+def view_bill():
+    return render_template("bill.html")
+
+
+@app.route("/search")                        # toi page search
 def view_search_page():
     from_price = request.args.get("from_price")
     to_price = request.args.get("to_price")
@@ -47,17 +52,12 @@ def view_search_page():
     return render_template("search.html", roomdetails=roomdetails)
 
 
-@app.route("/book/<int:roomdetail_id>")
+@app.route("/search/<int:roomdetail_id>")    #xem thong tin chi tiet cac phong
 def room_detail(roomdetail_id):
     roomdetail = utils.get_roomdetail_by_id(roomdetail_id=roomdetail_id)
 
-    return render_template('product-detail.html',
+    return render_template('room-detail.html',
                            roomdetail=roomdetail)
-
-
-@app.route("/room1")                          # toi page room1
-def view_book_room():
-    return render_template("room1.html")
 
 
 @app.route("/login", methods=['get', 'post'])    # toi page login
@@ -111,6 +111,36 @@ def logout_usr():
     logout_user()
     return redirect("/")
 
+
+@app.route('/api/cart', methods=['get','post'])
+def add_to_cart():
+    if 'cart' not in session:
+        session['cart'] = {}
+
+    data = request.json
+    product_id = str(data.get('id'))
+    product_name = data.get('name')
+    price = data.get('price')
+
+    cart = session['cart']
+    if product_id in cart: # nếu sp đã có trong giỏ
+        quan = cart[product_id]['quantity']
+        cart[product_id]['quantity'] = int(quan) + 1
+    else: # sp chưa có trong giỏ
+        cart[product_id] = {
+            "id": product_id,
+            "name": product_name,
+            "price": price,
+            "quantity": 1
+        }
+
+    session['cart'] = cart
+    quan, price = utils.cart_stats(session['cart'])
+
+    return jsonify({
+        'total_quantity': quan,
+        'total_amount': price
+    })
 
 @login.user_loader
 def user_load(user_id):
