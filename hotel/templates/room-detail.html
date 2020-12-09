@@ -44,20 +44,25 @@
             <div class="row">
                 <div class="col-lg-8">
                     <div class="room-details-item">
-                        <img src="./static/images/room-details.jpg" alt="">
+                        <img src="{{ url_for('static', filename=roomdetail.image) }}"
+                         alt="{{ roomdetail.name }}" />
                         <div class="rd-text">
                             <div class="rd-title">
-                                <h3>Premium King Room</h3>
+                                <h3>{{ roomdetail.name }}</h3>
                                 <div class="rdt-right">
                                     <a href="#">Booking Now</a>
                                 </div>
                             </div>
-                            <h2>159$<span>/Pernight</span></h2>
+                            <h2>{{ roomdetail.price }}$<span>/Pernight</span></h2>
                             <table>
                                 <tbody>
                                     <tr>
                                         <td class="r-o">Size:</td>
                                         <td>30 ft</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="r-o">Type:</td>
+                                        <td>{{ roomdetail.type.name }}</td>
                                     </tr>
                                     <tr>
                                         <td class="r-o">Capacity:</td>
