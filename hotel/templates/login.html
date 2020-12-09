@@ -19,10 +19,9 @@
 
 <link href="{{ url_for('static', filename='css/style-login.css')}}" rel="stylesheet">
         <form method="post" action="{{ url_for('login_admin') }}">
-            <div class="container w-50 login-container">
-              <div class="row">
+            <div class="container login-container">
                 <div class="wrap-flex">
-                  <div class="col-sm-8 login-form-1">
+                  <div class="login-form-1">
                     <form>
                       <div class="form-group">
                         <input
@@ -52,7 +51,6 @@
                     </form>
                   </div>
                 </div>
-              </div>
             </div>
         </form>
 {%block footer %}
