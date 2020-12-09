@@ -65,7 +65,7 @@
                     </div>
                     <div class="social-icons-section text-center">
                         <H1><small><small href="{{url_for('room_detail', roomdetail_id=r.id) }}">{{ r.name }}</small></small> </H1>
-                        <a class="fac" href="#url">
+                        <a class="fac" href="{{url_for('room_detail', roomdetail_id=r.id) }}">
                             <i class="fa fa-bed"></i>
                         </a>
                     </div>
