@@ -12,16 +12,14 @@
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css?family=Lora:400,700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Cabin:400,500,600,700&display=swap" rel="stylesheet">
-
-    <!-- Css Styles -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/roomcss/bootstrap.min.css')}}" type="text/css">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/roomcss/owl.carousel.min.css')}}" type="text/css">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/roomcss/nice-select.css')}}" type="text/css">
-<!--    <link rel="stylesheet" href="{{ url_for('static', filename='css/roomcss/jquery-ui.min.css')}}" type="text/css">-->
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/roomcss/magnific-popup.css')}}" type="text/css">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/roomcss/style.css')}}" type="text/css">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/roomcss/slicknav.min.css')}}" type="text/css">
-
+    <!-- css Plugins -->
+    {%block style %}
+    {%include 'base/style.html'%}
+    {% endblock %}
+    <!-- Js Plugins -->
+    {%block stylejs %}
+    {%include 'base/stylejs.html'%}
+    {% endblock %}
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
 </head>
@@ -141,15 +139,6 @@
 {%block footer %}
 {%include 'base/footer.html'%}
 {% endblock %}
-    <!-- Js Plugins -->
-    <script src="./static/js/jquery-3.3.1.min.js"></script>
-    <script src="./static/js/bootstrap.min.js"></script>
-    <script src="./static/js/jquery.magnific-popup.min.js"></script>
-    <script src="./static/js/jquery.nice-select.min.js"></script>
-    <script src="./static/js/jquery-ui.min.js"></script>
-    <script src="./static/js/jquery.slicknav.js"></script>
-    <script src="./static/js/owl.carousel.min.js"></script>
-    <script src="./static/js/main.js"></script>
 </body>
 
 </html>
