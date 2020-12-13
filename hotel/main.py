@@ -1,4 +1,4 @@
-from flask import render_template, request, redirect, url_for, jsonify
+from flask import render_template, request, redirect, url_for, jsonify, session
 from hotel import app, login, utils
 from hotel.models import *
 from flask_login import login_user, logout_user
@@ -33,7 +33,7 @@ def view_services_page():
 
 @app.route("/book")                          # toi page booking
 def view_book_page():
-    return render_template('book.html')
+    return render_template('menu.html')
 
 
 @app.route("/bill")                          # toi page bill
@@ -41,7 +41,7 @@ def view_bill():
     return render_template("bill.html")
 
 
-@app.route("/search")                        # toi page search
+@app.route("/booking")                        # toi page search
 def view_search_page():
     from_price = request.args.get("from_price")
     to_price = request.args.get("to_price")
@@ -49,10 +49,10 @@ def view_search_page():
     roomdetails = utils.read_roomdetails(from_price=from_price,
                                          to_price=to_price)
 
-    return render_template("search.html", roomdetails=roomdetails)
+    return render_template("booking.html", roomdetails=roomdetails)
 
 
-@app.route("/search/<int:roomdetail_id>")    #xem thong tin chi tiet cac phong
+@app.route("/menu/<int:roomdetail_id>")    #xem thong tin chi tiet cac phong
 def room_detail(roomdetail_id):
     roomdetail = utils.get_roomdetail_by_id(roomdetail_id=roomdetail_id)
 
@@ -77,7 +77,6 @@ def login_admin():
         return render_template('login.html')
 
     return redirect('/')
-
 
 @app.route('/register', methods=['get', 'post'])         # toi page dang ky
 def register():
