@@ -7,12 +7,24 @@
             rel="stylesheet" />
     <link href="{{ url_for('static', filename='css/style-register.css') }}"
           rel="stylesheet" />
-
+    {%block scripts %}
+    {%include 'base/Scripts.html'%}
+    {% endblock %}
 </head>
 <body>
     {%block header %}
     {%include 'base/header.html'%}
     {% endblock %}
+    <section class="w3l-breadcrumb">
+    <div class="breadcrum-bg py-sm-5 py-4">
+        <div class="container py-lg-3">
+
+            <h2>Sign Up</h2>
+            <p><a href="Home.html">Home</a> &nbsp; / &nbsp; Sigh Up</p>
+
+        </div>
+    </div>
+    </section>
     <div class="container">
         {% if err_msg %}
         <div class="alert alert-warning">
@@ -24,7 +36,7 @@
               <div class="row justify-content-center">
                 <div class="wrap-flex">
                   <div class="col-md-6 signup-form-1">
-                    <h3>Đăng Kí</h3>
+                    <h3>CREATE USER</h3>
                     <form>
                       <div class="card">
                         <div class="card-body">
@@ -35,7 +47,7 @@
                                 id="name"
                                 name="name"
                                 class="form-control"
-                                placeholder="Username" />
+                                placeholder="FULL NAME" />
                             </div>
                             <div class="form-group">
                               <input
@@ -106,5 +118,6 @@
 {%block footer %}
 {%include 'base/footer.html'%}
 {% endblock %}
+
 </body>
 </html>
