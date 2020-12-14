@@ -55,7 +55,7 @@
                 {% for r in roomdetails %}
                 <div class="col-sm-4">
                     <div class="team-grids text-center">
-                        <img class="img-fluid"src="{{ url_for('static', filename=r.image) }}" alt="">
+                        <img class="img-fluid" src="{{ url_for('static', filename=r.image) }}" alt="">
                         <div class="team-info">
                             <div class="caption">
                                 <h4><td>{{ "{:,}".format(r.price) }} VNĐ</td></h4>
