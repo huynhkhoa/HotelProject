@@ -33,7 +33,7 @@ def view_services_page():
     return render_template("services.html")
 
 
-@app.route("/book")                          # toi page booking
+@app.route("/menu")                          # toi page booking
 def view_book_page():
     return render_template('menu.html')
 
