@@ -2,6 +2,7 @@ from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_admin import Admin
 from flask_login import LoginManager
+from .enums import *
 
 app = Flask(__name__)
 app.secret_key = "\xb9\xd5\x97\xcc4\x81\xf8X\x98N\xde\xd6\x07?\xf5\x9f"

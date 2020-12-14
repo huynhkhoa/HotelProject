@@ -1,3 +1,5 @@
+from symbol import decorator
+
 from flask import render_template, request, redirect, url_for, jsonify, session
 from hotel import app, login, utils
 from hotel.models import *
@@ -33,7 +35,7 @@ def view_services_page():
 
 @app.route("/book")                          # toi page booking
 def view_book_page():
-    return render_template('menu.html')
+    return render_template('book.html')
 
 
 @app.route("/bill")                          # toi page bill
@@ -41,7 +43,7 @@ def view_bill():
     return render_template("bill.html")
 
 
-@app.route("/booking")                        # toi page search
+@app.route("/booking")                        # toi page booking
 def view_search_page():
     from_price = request.args.get("from_price")
     to_price = request.args.get("to_price")
@@ -52,7 +54,7 @@ def view_search_page():
     return render_template("booking.html", roomdetails=roomdetails)
 
 
-@app.route("/menu/<int:roomdetail_id>")    #xem thong tin chi tiet cac phong
+@app.route("/search/<int:roomdetail_id>")    #xem thong tin chi tiet cac phong
 def room_detail(roomdetail_id):
     roomdetail = utils.get_roomdetail_by_id(roomdetail_id=roomdetail_id)
 
@@ -78,26 +80,24 @@ def login_admin():
 
     return redirect('/')
 
+
 @app.route('/register', methods=['get', 'post'])         # toi page dang ky
 def register():
-    err_msg = ''
+    err_msg = ""
     if request.method == 'POST':             # gui data tu bieu mau register.html den server
         name = request.form.get('name')
         email = request.form.get('email')
         phone = request.form.get('phone')
-        identity_card = request.form.get('identity_card')
         username = request.form.get('username')
         password = request.form.get('password', '').strip()
         confirm_password = request.form.get('confirm_password', '').strip()        # băm password
 
         if password == confirm_password:
-            avatar = request.files["avatar"]
-            avatar_path = 'images/upload/%s' % avatar.filename
-            avatar.save(os.path.join(app.config['ROOT_PROJECT_PATH'],
-                                     'static/', avatar_path))
-
-            if utils.add_user(name=name, email=email, phone=phone, identity_card=identity_card, username=username,
-                              password=password, avatar=avatar_path):
+            if utils.add_user(name=name,
+                              email=email,
+                              phone=phone,
+                              username=username,
+                              password=password):
                 return redirect('/admin')
         else:
             err_msg = "Password Error"
@@ -111,24 +111,24 @@ def logout_usr():
     return redirect("/")
 
 
-@app.route('/api/cart', methods=['get','post'])
+@app.route('/api/cart', methods=['post'])
 def add_to_cart():
     if 'cart' not in session:
         session['cart'] = {}
 
     data = request.json
-    product_id = str(data.get('id'))
-    product_name = data.get('name')
+    roomdetail_id = str(data.get('id'))
+    roomdetail_name = data.get('name')
     price = data.get('price')
 
     cart = session['cart']
-    if product_id in cart: # nếu sp đã có trong giỏ
-        quan = cart[product_id]['quantity']
-        cart[product_id]['quantity'] = int(quan) + 1
+    if roomdetail_id in cart: # nếu sp đã có trong giỏ
+        quan = cart[roomdetail_id]['quantity']
+        cart[roomdetail_id]['quantity'] = int(quan) + 1
     else: # sp chưa có trong giỏ
-        cart[product_id] = {
-            "id": product_id,
-            "name": product_name,
+        cart[roomdetail_id] = {
+            "id": roomdetail_id,
+            "name": roomdetail_name,
             "price": price,
             "quantity": 1
         }
@@ -140,6 +140,23 @@ def add_to_cart():
         'total_quantity': quan,
         'total_amount': price
     })
+
+
+@app.route('/payment', methods=['get', 'post'])
+def payment():
+    if request.method == 'POST':
+        if utils.add_receipt(session.get('cart')):
+            del session['cart']
+
+            return jsonify({"message": "Payment added!!!"})
+
+    quan, price = utils.cart_stats(session.get('cart'))
+    cart_info = {
+        'total_quantity': quan,
+        'total_amount': price
+    }
+    return render_template('payment.html', cart_info=cart_info)
+
 
 @login.user_loader
 def user_load(user_id):
