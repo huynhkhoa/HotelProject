@@ -59,7 +59,6 @@ class RoomDetailModelView(ModelView):    # ke thua RoomDetailModelView
                      "description": "Miêu tả",
                      "type": "Loại phòng"}
 
-
     def _status_formatter(view, context, model, name):
         if model.status:
             status = model.status.value
@@ -70,6 +69,9 @@ class RoomDetailModelView(ModelView):    # ke thua RoomDetailModelView
     column_formatters = {
         'status': _status_formatter
     }
+
+    def is_accessible(self):             # login thanh cong thi show RoomDetailModelView
+        return current_user.is_authenticated
 
 
 class UserModelView(ModelView):          # ke thua UserModelView
@@ -194,10 +196,11 @@ class SearchRoom(BaseView):
                                                                status=status,
                                                                type_id=type_id), status=Status)
 
+    def is_accessible(self):                # login thanh cong thi show SearchRoom
+        return current_user.is_authenticated
+
 
 #add cac class vao page admin
-
-
 admin.add_view(RoomDetailModelView(RoomDetail, db.session, name="Danh mục phòng"))
 admin.add_view(TypeModelView(Type, db.session, name="Danh sách phòng"))
 admin.add_view(UserModelView(User, db.session, name="Người dùng"))
@@ -206,6 +209,6 @@ admin.add_view(BookingModelView(Booking, db.session))
 admin.add_view(CustomerModelView(Customer, db.session, name="Loại khách"))
 admin.add_view(SurchargeModelView(Surcharge, db.session, name="Phụ phí"))
 admin.add_view(InvoiceModelView(Invoice, db.session, name="Hóa đơn thanh toán"))
-admin.add_view(LogoutView(name='Logout'))
+admin.add_view(SearchRoom(name="Tìm kiếm phòng"))
 admin.add_view(ContactView(name='Contact'))
-admin.add_view(SearchRoom(name="Danh sách phòng"))
+admin.add_view(LogoutView(name='Logout'))
