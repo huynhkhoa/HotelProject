@@ -3,15 +3,13 @@ from hotel.models import *
 from hotel import db
 
 
-def add_user(name, email, phone, identity_card, username, password, avatar):
+def add_user(name, email, phone, username, password):
     password = str(hashlib.md5(password.encode('utf-8')).hexdigest())
     u = User(name=name,
              email=email,
              phone=phone,
-             identity_card=identity_card,
              username=username,
-             password=password,
-             avatar=avatar)
+             password=password)
     try:
         db.session.add(u)
         db.session.commit()
@@ -40,6 +38,28 @@ def read_roomdetails(from_price=None, to_price=None) -> object:
                                          RoomDetail.price.__lt__(to_price))
 
     return roomdetails.all()
+
+
+def add_receipt(cart):
+    if cart:
+        try:
+            order = Order(order_id=1)
+            db.session.add(order)
+
+            for r in list(cart.values()):
+                invoice = Invoice(roomdetail_id=int(r["id"]),
+                                  order_id=order.id,
+                                  price=float(r["price"]),
+                                  quantity=r["quantity"])
+                db.session.add(invoice)
+
+            db.session.commit()
+
+            return True
+        except:
+            pass
+
+    return False
 
 
 def get_roomdetail_by_id(roomdetail_id):
