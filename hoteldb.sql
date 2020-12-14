@@ -56,7 +56,7 @@ CREATE TABLE `customer` (
   `coefficient` float NOT NULL,
   `note` varchar(50) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -65,6 +65,7 @@ CREATE TABLE `customer` (
 
 LOCK TABLES `customer` WRITE;
 /*!40000 ALTER TABLE `customer` DISABLE KEYS */;
+INSERT INTO `customer` VALUES (1,'Khách nội địa',3,'không có ghi chú'),(2,'Khách nước ngoài',3,'không có ghi chú');
 /*!40000 ALTER TABLE `customer` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -182,7 +183,7 @@ CREATE TABLE `surcharge` (
   `surcharge` int NOT NULL,
   `quantity` int NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -191,6 +192,7 @@ CREATE TABLE `surcharge` (
 
 LOCK TABLES `surcharge` WRITE;
 /*!40000 ALTER TABLE `surcharge` DISABLE KEYS */;
+INSERT INTO `surcharge` VALUES (1,25,3);
 /*!40000 ALTER TABLE `surcharge` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -265,4 +267,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-12-15  0:02:37
+-- Dump completed on 2020-12-15  0:27:20
