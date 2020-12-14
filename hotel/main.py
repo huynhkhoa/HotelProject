@@ -35,7 +35,7 @@ def view_services_page():
 
 @app.route("/book")                          # toi page booking
 def view_book_page():
-    return render_template('book.html')
+    return render_template('menu.html')
 
 
 @app.route("/bill")                          # toi page bill
@@ -122,10 +122,10 @@ def add_to_cart():
     price = data.get('price')
 
     cart = session['cart']
-    if roomdetail_id in cart: # nếu sp đã có trong giỏ
+    if roomdetail_id in cart:                               # nếu sp đã có trong giỏ
         quan = cart[roomdetail_id]['quantity']
         cart[roomdetail_id]['quantity'] = int(quan) + 1
-    else: # sp chưa có trong giỏ
+    else:                                                   # sp chưa có trong giỏ
         cart[roomdetail_id] = {
             "id": roomdetail_id,
             "name": roomdetail_name,
@@ -142,7 +142,7 @@ def add_to_cart():
     })
 
 
-@app.route('/payment', methods=['get', 'post'])
+@app.route('/payment', methods=['get', 'post'])                       #chức năng giỏ hàng
 def payment():
     if request.method == 'POST':
         if utils.add_receipt(session.get('cart')):
