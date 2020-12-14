@@ -13,17 +13,25 @@
     <link href="https://fonts.googleapis.com/css?family=Lora:400,700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Cabin:400,500,600,700&display=swap" rel="stylesheet">
 
-    <!-- css Plugins -->
-    {%block style %}
-    {%include 'base/style.html'%}
-    {% endblock %}
-    <!-- Js Plugins -->
-    {%block stylejs %}
-    {%include 'base/stylejs.html'%}
-    {% endblock %}
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/roomcss/bootstrap.min.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/roomcss/owl.carousel.min.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/roomcss/nice-select.css')}}" type="text/css">
+<!--    <link rel="stylesheet" href="{{ url_for('static', filename='css/roomcss/jquery-ui.min.css')}}" type="text/css">-->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/roomcss/magnific-popup.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/roomcss/style.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/roomcss/slicknav.min.css')}}" type="text/css">
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+    <script src="./static/js/jquery-3.3.1.min.js"></script>
+    <script src="./static/js/bootstrap.min.js"></script>
+    <script src="./static/js/jquery.magnific-popup.min.js"></script>
+    <script src="./static/js/jquery.nice-select.min.js"></script>
+    <script src="./static/js/jquery-ui.min.js"></script>
+    <script src="./static/js/jquery.slicknav.js"></script>
+    <script src="./static/js/owl.carousel.min.js"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
 </head>
 
 <body>
@@ -33,8 +41,9 @@
 <section class="w3l-breadcrumb">
     <div class="breadcrum-bg py-sm-5 py-4">
         <div class="container py-lg-3">
-            <h2>{{ roomdetail.name }}</h2>
+            <h2>Room1</h2>
             <p><a href="home.html">Home</a> &nbsp; / &nbsp; Room</p>
+            <span class="badge badge-primary" id="cart-stats">0</span>
         </div>
     </div>
 </section>
@@ -82,50 +91,47 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="col-lg-4">
                     <div class="room-booking">
                         <h3>Your Reservation</h3>
-                        <form action="#">
+                        <form action="">
                             <div class="check-date">
                             <label for="date-in">Check In:</label>
                             <input type="date" class="date-input" id="date-in">
                             <!--                                <i class="fa fa-calendar"></i>-->
-                        </div>
-                        <div class="check-date">
-                            <label for="date-out">Check Out:</label>
-                            <input type="date" class="date-input" id="date-out">
-                        </div>
-                            <div class="select-option">
-                                <label for="guest">Guests:</label>
-                                <select id="guest" style="display: none;">
-                                    <option value="">3 Adults</option>
-                                </select>
-                                <div class="nice-select" tabindex="0">
-                                    <span class="current">3 Adults</span>
-                                    <ul class="list">
-                                        <li data-value="" class="option selected focus">3 Adults</li>
-                                        <li data-value="" class="option selected focus">2 Adults</li>
-                                        <li data-value="" class="option selected focus">1 Adults</li>
-
-                                    </ul>
-                                </div>
                             </div>
-                            <div class="select-option">
-                                <label for="foreigner">Are there any foreigner?</label>
-                                <select id="foreigner" style="display: none;">
-                                    <option value="">No foreigner</option>
-                                </select>
-                                <div class="nice-select" tabindex="0">
-                                    <span class="current">No foreigner</span>
-                                    <ul class="list">
-                                        <li data-value="" class="option selected">No foreigner</li>
-                                        <li data-value="" class="option selected">1 foreigner</li>
-                                        <li data-value="" class="option selected">2 foreigner</li>
-                                        <li data-value="" class="option selected">3 foreigner</li>
-                                    </ul>
-                                </div>
+                            <div class="check-date">
+                                <label for="date-out">Check Out:</label>
+                                <input type="date" class="date-input" id="date-out">
                             </div>
-                            <button type="submit">Check Availability</button>
+                                <div class="select-option">
+                                    <label for="guest">Guests:</label>
+                                    <select id="guest" style="display: none;">
+                                        <option value="">3 Adults</option>
+                                    </select>
+                                </div>
+                                <div class="select-option">
+                                    <label for="foreigner">Are there any foreigner?</label>
+                                    <select id="foreigner" style="display: none;">
+                                        <option value="">No foreigner</option>
+                                    </select>
+                                    <div class="nice-select" tabindex="0">
+                                        <span class="current">No foreigner</span>
+                                        <ul class="list">
+                                            <li data-value="" class="option selected">No foreigner</li>
+                                            <li data-value="" class="option selected">1 foreigner</li>
+                                            <li data-value="" class="option selected">2 foreigner</li>
+                                            <li data-value="" class="option selected">3 foreigner</li>
+                                        </ul>
+                                    </div>
+                                  <div>
+                                        <input type="button"
+                                               onclick="addToCart({{ roomdetail.id }}, '{{ roomdetail.name }}', {{ roomdetail.price }})"
+                                               value="Đặt hàng"
+                                               class="btn btn-danger" />
+                                  </div>
+                                </div>
                         </form>
                     </div>
                 </div>
@@ -135,5 +141,7 @@
 {%block footer %}
 {%include 'base/footer.html'%}
 {% endblock %}
+    <!-- Js Plugins -->
 </body>
+
 </html>
