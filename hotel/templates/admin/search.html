@@ -28,7 +28,6 @@
 <table class="table">
     <thead>
     <tr class="table__tr">
-        <td class="table__td">STT</td>
         <td class="table__td">Mã Phòng</td>
         <td class="table__td">Tên Phòng</td>
         <td class="table__td">Loại Phòng</td>
@@ -38,7 +37,6 @@
     <tbody class="table__tobdy">
     {% for r in roomdetails %}
     <tr class="table__tr">
-        <td class="table__td">{{ loop.index0 + 1 }}</td>
         <td class="table__td">{{ r.id }}</td>
         <td class="table__td">{{ r.name }}</td>
         <td class="table__td">{{ r.type_id }}</td>
