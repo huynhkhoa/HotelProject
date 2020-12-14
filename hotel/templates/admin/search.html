@@ -1,0 +1,50 @@
+{% extends 'admin/master.html' %}
+
+{% block body %}
+<form class="form">
+    <div class="row">
+        <div class="col-lg-3">
+            <div class="form-group">
+                <label class="col-form-label">Tìm tên phòng:</label>
+                <input type="text" name="name" class="form-control">
+            </div>
+        </div>
+        <div class="col-lg-3">
+            <div class="form-group">
+                <label class="col-form-label">Tìm Trạng Thái:</label>
+                <select name="status" class="form-control">
+                    <option value="">None</option>
+                    {% for tt in status %}
+                    <option value="{{ tt.value }}">{{ tt.value }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <input type="submit" class="btn btn-danger">
+    </div>
+</form>
+<table class="table">
+    <thead>
+    <tr class="table__tr">
+        <td class="table__td">STT</td>
+        <td class="table__td">Mã Phòng</td>
+        <td class="table__td">Tên Phòng</td>
+        <td class="table__td">Loại Phòng</td>
+        <td class="table__td">Trạng Thái</td>
+    </tr>
+    </thead>
+    <tbody class="table__tobdy">
+    {% for r in roomdetails %}
+    <tr class="table__tr">
+        <td class="table__td">{{ loop.index0 + 1 }}</td>
+        <td class="table__td">{{ r.id }}</td>
+        <td class="table__td">{{ r.name }}</td>
+        <td class="table__td">{{ r.type_id }}</td>
+        <td class="table__td">{{ r.status.value }}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
