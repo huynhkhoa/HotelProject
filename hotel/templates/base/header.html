@@ -24,7 +24,7 @@
 						<li><a class="nav-link" href="{{ url_for('view_contact_page') }}">Contact</a></li>
 					</li>
 					<li class="nav-item @@contact__active">
-						<li><a class="nav-link" href="{{ url_for('view_book_page') }}">MENU</a></li>
+						<li><a class="nav-link" href="{{ url_for('view_menu_page') }}">MENU</a></li>
 					</li>
 					{% if current_user.is_authenticated %}
 						<li class="nav-item @@logout__active">
@@ -36,7 +36,7 @@
 							<li><a class="nav-link" href="{{ url_for('login_admin') }}">SIGH IN</a></li>
 					{% endif %}
 				</ul>
-				<a href="{{ url_for('view_search_page') }}" class="nar-link ml-3 book btn btn-secondary btn-style">Book Now</a>
+				<a href="{{ url_for('view_book_page') }}" class="nar-link ml-3 book btn btn-secondary btn-style">Book Now</a>
 			</div>
 		</div>
 	</nav>

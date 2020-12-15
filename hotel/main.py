@@ -33,8 +33,8 @@ def view_services_page():
     return render_template("services.html")
 
 
-@app.route("/menu")                          # toi page booking
-def view_book_page():
+@app.route("/menu")                          # toi page menu
+def view_menu_page():
     return render_template('menu.html')
 
 
@@ -44,7 +44,7 @@ def view_bill():
 
 
 @app.route("/booking")                        # toi page booking
-def view_search_page():
+def view_book_page():
     from_price = request.args.get("from_price")
     to_price = request.args.get("to_price")
 
@@ -54,7 +54,7 @@ def view_search_page():
     return render_template("booking.html", roomdetails=roomdetails)
 
 
-@app.route("/search/<int:roomdetail_id>")    #xem thong tin chi tiet cac phong
+@app.route("/menu/<int:roomdetail_id>")    #xem thong tin chi tiet cac phong MENU
 def room_detail(roomdetail_id):
     roomdetail = utils.get_roomdetail_by_id(roomdetail_id=roomdetail_id)
 

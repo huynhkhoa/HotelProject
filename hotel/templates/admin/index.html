@@ -1,12 +1,17 @@
+{%block header %}
+{%include 'base/header.html'%}
+{% endblock %}
+
 {% extends 'admin/master.html' %}
 
 {% block body %}
+
     {% if current_user.is_authenticated %}
-            <h1>CHÀO MỪNG ĐẾN TRANG QUẢN TRỊ!!!</h1>
-            <h1> {{ current_user.name }}</h1>
+<h1><center>Welcome <p style="color:red"><i><upper>{{ current_user.name }}</upper></i></p></center></h1>
+
     {% else %}
             {% include 'admin/login.html' %}
     {% endif %}
-{% endblock %}
 
+{% endblock %}
 

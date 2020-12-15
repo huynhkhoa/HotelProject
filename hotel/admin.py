@@ -201,14 +201,14 @@ class SearchRoom(BaseView):
 
 
 #add cac class vao page admin
-admin.add_view(RoomDetailModelView(RoomDetail, db.session, name="Danh mục phòng"))
-admin.add_view(TypeModelView(Type, db.session, name="Danh sách phòng"))
-admin.add_view(UserModelView(User, db.session, name="Người dùng"))
-admin.add_view(OrderModelView(Order, db.session, name="Phiếu thuê phòng"))
-admin.add_view(BookingModelView(Booking, db.session))
-admin.add_view(CustomerModelView(Customer, db.session, name="Loại khách"))
-admin.add_view(SurchargeModelView(Surcharge, db.session, name="Phụ phí"))
-admin.add_view(InvoiceModelView(Invoice, db.session, name="Hóa đơn thanh toán"))
-admin.add_view(SearchRoom(name="Tìm kiếm phòng"))
+admin.add_view(RoomDetailModelView(RoomDetail, db.session, name="Room"))
+admin.add_view(TypeModelView(Type, db.session, name="Menu"))
+admin.add_view(UserModelView(User, db.session, name="User"))
+admin.add_view(OrderModelView(Order, db.session, name="Order form"))
+admin.add_view(BookingModelView(Booking, db.session, name="Booking"))
+admin.add_view(CustomerModelView(Customer, db.session, name="User type")) #loai khach
+admin.add_view(SurchargeModelView(Surcharge, db.session, name="Extra Free")) #phu phi
+admin.add_view(InvoiceModelView(Invoice, db.session, name="Invoice")) #hoa don
+admin.add_view(SearchRoom(name="Search"))
 admin.add_view(ContactView(name='Contact'))
 admin.add_view(LogoutView(name='Logout'))
